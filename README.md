@@ -1,8 +1,7 @@
-# freeairt
+# FreeAirT
 a simple video streaming site built on top of flask and embed player links
 
 ## simple walkthrough
-
 
 https://user-images.githubusercontent.com/54321675/209849225-7d0f504c-a0a9-473a-bc72-f69e34fa99ab.mp4
 
@@ -62,6 +61,7 @@ Start the server
 - [x] update courses
 - [x] embededd links
 - [ ] remove redundancy from DB
+- [x] hashing password before storing to db
 - [x] Improve Design
 - [ ] prevelidges for user roles
 - [ ] faster streamings
