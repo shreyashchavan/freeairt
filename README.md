@@ -41,6 +41,11 @@ Install dependencies
   pip install requiremnts.txt
 ```
 
+Make Database
+```bash
+  python i.py
+```
+
 Start the server
 
 ```bash
