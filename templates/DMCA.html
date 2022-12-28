@@ -1,0 +1,28 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<center>
+    <h1>Request Us</h1>
+<div id="contact-form">
+  <form action="/contact" method="post">
+    {% if msg %}
+    <div class="alert alert-success">{{ msg }}</div>
+    {% endif %}
+    <hr>
+    <h5>please remember we are here to support students! <b><span style=" color: brown;">Still</span></b> fill form</h5>
+    <br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <hr>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <hr>
+    <label for="message">DMCA Message:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+    <br>
+    <input class="btn-light" type="submit" value="Send Message">
+    <hr>
+  </form> 
+</center>
+
+{% endblock %}

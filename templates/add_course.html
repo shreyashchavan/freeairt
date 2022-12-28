@@ -1,0 +1,20 @@
+<!-- add_course.html -->
+{% extends "header.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2>Add Course</h2>
+    <form method="post" action="{{ url_for('add_course') }}">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class="form-control") }}
+        {{ form.description.label }}
+        {{ form.description(class="form-control") }}
+        {{ form.iframes_links.label }}
+        {{ form.iframes_links(class="form-control") }}
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+<!-- login.html -->
+{% extends "header.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2>Login</h2>
+    {% if error %}
+     <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <form method="post" action="{{ url_for('login') }}">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class="form-control") }}
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <br>
+      <h6> New account?</h6> <a href="{{ url_for('register') }}">Sign-Up</a>
+      <br>
+    </form>
+  </div>
+{% endblock %}
+

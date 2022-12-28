@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+{% block content %}
+<title>Contact Us</title>
+  
+    <center>
+      <h1>Contact Us</h1>
+  <div id="contact-form">
+    <form action="/contact" method="post">
+      {% if msg %}
+      <div class="alert alert-success">{{ msg }}</div>
+      {% endif %}
+      <hr>
+      <h5>Make sure you use this form only for <b>Requests, Reviews</b> for other kindly use <b><span style=" color: brown;">DMCA forms</span></b></h5>
+      <br>
+      <label for="name">Name:</label> <span class="star">*</span><br>
+      <input type="text" id="name" name="name" required><br>
+      <hr>
+      <label for="email">Email:</label> <span class="star">*</span><br>
+      <input type="email" id="email" name="email" required><br>
+      <hr>
+      <label for="message">Message: </label><span class="star">*</span><br>
+      <textarea id="message" name="message" required></textarea><br>
+      <br>
+      <input class="btn-light" type="submit" value="Send Message">
+      <hr>
+    </form> 
+  </center>
+{% endblock %}

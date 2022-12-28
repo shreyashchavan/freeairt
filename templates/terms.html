@@ -1,0 +1,33 @@
+{% extends 'header.html' %}
+{% block content %}
+<style>
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .terms-container {
+      max-width: 800px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+  </style>
+    <title>Terms and Conditions</title>
+    <h1>Terms and Conditions</h1>
+    <hr>
+    <div class="container">
+    <p>Welcome to our video streaming site! By using our site, you agree to be bound by these terms and conditions. Please read them carefully before using our site.</p>
+    <h2>Use of our Site</h2>
+    <p>You may use our site for personal, non-commercial use only. You may not use our site for any illegal or unauthorized purpose. You may not attempt to gain unauthorized access to our site or any server, computer, or database connected to our site.</p>
+    <h2>Content</h2>
+    <p>All content on our site, including text, images, video, and other media, is the property of our company or its licensors. You may not use any content on our site for commercial purposes without our prior written consent.</p>
+    <h2>Privacy</h2>
+    <p>We respect your privacy and are committed to protecting it. Please see our <a href="{{ url_for('privacy')}}">Privacy Policy</a> for more information.</p>
+    <h2>Changes to these Terms</h2>
+    <p>We reserve the right to modify these terms and conditions at any time. Any changes will be effective immediately upon posting to our site. It is your responsibility to review these terms and conditions periodically for any changes. Your continued use of our site after any changes have been made constitutes your acceptance of the revised terms.</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about these terms and conditions, please <a href="{{ url_for('contact')}}">contact us</a>.</p>
+</div>
+    {% endblock %}

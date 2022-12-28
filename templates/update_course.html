@@ -1,0 +1,15 @@
+
+{% extends "header.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2>Update Course</h2>
+    <form method="post" action="{{ url_for('update_course', course_id=course.id) }}">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class="form-control", value=course.name) }}
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+{% endblock %}

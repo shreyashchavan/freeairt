@@ -1,0 +1,19 @@
+{% extends "header.html" %}
+{% block content %}
+<center>
+  <h1>Profile</h1>
+  <hr>
+  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+  <br>
+  <p>Email: {{ email }}</p>
+  <p>Username: {{ username }}</p>
+</center>
+<style>
+  .avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+</style>
+{% endblock %}

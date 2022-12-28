@@ -1,0 +1,16 @@
+{ % extend 'header.html'% }
+
+{% block content %}
+  <h1>Update Video</h1>
+  <form action="{{ url_for('update_video', video_id=video.id) }}" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ video.title }}">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description">{{ video.description }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+{% endblock %}

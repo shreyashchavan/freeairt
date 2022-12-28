@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% block content %}
+<style>
+    h1{
+        text-align: center;
+    }
+    .container{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+</style>
+    <title>Privacy Policy</title>
+    <h1>Privacy Policy</h1>
+    <hr>
+    <div class="container">
+    <p>At our video streaming site, we are committed to protecting the privacy of our users. This privacy policy outlines the types of personal information we collect and how we use, disclose, and protect it.</p>
+    <h2>Information We Collect</h2>
+    <p>We collect personal information from users in a number of ways, including:</p>
+    <ul>
+      <li>When users create an account on our site</li>
+      <li>When users purchase a subscription or make other transactions on our site</li>
+      <li>When users interact with our site, such as by leaving comments or ratings</li>
+    </ul>
+    <p>The personal information we collect may include name, email address, billing and shipping information, and other contact details. We may also collect information about users' preferences and interests, as well as information about their use of our site.</p>
+    <h2>Use of Personal Information</h2>
+    <p>We may use personal information for a number of purposes, including:</p>
+    <ul>
+      <li>To provide users with the services and support they request</li>
+      <li>To communicate with users about their account and any changes or updates to our site or policies</li>
+      <li>To personalize users' experience on our site, such as by recommending content based on their interests</li>
+      <li>To analyze and improve the performance and functionality of our site</li>
+      <li>To detect and prevent fraud or other illegal activities</li>
+    </ul>
+    <h2>Disclosure of Personal Information</h2>
+    <p>We may disclose personal information to third parties in the following circumstances:</p>
+    <ul>
+      <li>To service providers who assist us in operating our site or providing services to users</li>
+      <li>To law enforcement or other government agencies in response to a valid request</li>
+      <li>To protect the rights, property, or safety of our company, our users, or the public</li>
+    </ul>
+    <h2>Security of Personal Information</h2>
+    <p>We take reasonable steps to protect personal information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. However, no internet or email transmission is ever fully secure or error-free. Please take special care in deciding what information you send to us via email.</p>
+    <h2>Children's Privacy</h2>
+    <p>Our site is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will delete it in accordance with applicable law.</p>
+    <h2>Changes to this Privacy Policy</h2>
+    <p>We may update this privacy policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons. We encourage users to review the privacy policy regularly for any updates. If we make any material changes to this policy, we will provide notice through our site or by other means as required by law.</p>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about this privacy policy or our privacy practices, please <a href="{{ url_for('contact')}}">contact us</a>.</p>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,101 @@
+<!-- index.html -->
+{% extends "header.html" %}
+{% block content %}
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid bg-primary text-white text-center">
+  <div class="container">
+    <h1 class="display-4">Welcome to Video Streaming</h1>
+    <p class="lead">Watch the best movies and TV shows anytime, anywhere. Sign up now and get a free trial.</p>
+    <a href="{{ url_for('register') }}" class="btn btn-lg btn-light">Sign Up</a>
+  </div>
+</div>
+
+<!-- Features -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-film fa-4x"></i>
+          <h4 class="card-title mt-3">Thousands of Titles</h4>
+          <p class="card-text">With a library of thousands of movies and TV shows, you'll never run out of things to watch.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-desktop fa-4x"></i>
+          <h4 class="card-title mt-3">Watch Anywhere</h4>
+          <p class="card-text">Stream on your phone, tablet, laptop, or TV. No ads, no commitments.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body text-center">
+          <i class="fas fa-clock fa-4x"></i>
+          <h4 class="card-title mt-3">New Releases</h4>
+          <p class="card-text">Get access to the latest movies and TV shows as soon as they become available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="container mt-5">
+  <h2 class="text-center mb-5">What Our Customers Are Saying</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <p class="card-text">"Video Streaming has revolutionized the way I watch TV. I can watch my favorite shows anytime, anywhere, and on any device. It's amazing!"</p>
+          <p class="card-text"><small class="text-muted">Jane Doe</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <p class="card-text">"I love that I can watch all of my favorite movies and TV shows on Video Streaming. The interface is easy to use and the selection is unbeatable."</p>
+          <p class="card-text"><small class="text-muted">John Doe</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Map and Contact -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Google Map -->
+      <div id="map"></div>
+    </div>
+    <div class="col-md-6">
+      <!-- Contact Form -->
+      <h2>Contact Us</h2>
+      <form action="{{ url_for('contact') }}" method="POST">
+        {% if msg %}
+      <div class="alert alert-success">{{ msg }}</div>
+      {% endif %}
+        <div class="form-group">
+          <label>Name: </label><span class="star">*</span>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email: </label><span class="star">*</span>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Message: </label> <span class="star">*</span>
+          <textarea class="form-control" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

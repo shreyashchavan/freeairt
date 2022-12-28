@@ -1,0 +1,75 @@
+{% extends 'header.html' %}
+{% block content %}
+    <title>About Us</title>
+    <style>
+      h1, h2 {
+        text-align: center;
+      }
+      h1 {
+        font-size: 48px;
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .about-us-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .about-us-section {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 32px;
+      }
+      .about-us-section img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 8px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>About Us</h1>
+    <hr>
+    <div class="about-us-container">
+      <div class="about-us-section">
+        <h2>Our History</h2>
+        <p>Our video streaming site was founded in 2020 with the goal of providing users with easy access to a wide variety of movies, TV shows, and other video content. Since then, we have grown to become one of the most popular streaming platforms in the world, with millions of active users.</p>
+      </div>
+      <div class="about-us-section">
+        <img src="{{ url_for('static', filename='streaming.webp') }}" alt="A screenshot of our streaming platform">
+      </div>
+    </div>
+    <div class="about-us-container">
+      <div class="about-us-section">
+        <h2>Our Mission</h2>
+        <p>At our video streaming site, we believe that everyone should have access to great entertainment. That's why we strive to offer an extensive library of movies, TV shows, and other video content that is both diverse and high-quality. We are committed to providing a seamless and enjoyable streaming experience for all of our users.</p>
+      </div>
+      <div class="about-us-section">
+        <img src="{{ url_for('static', filename='team.jpg') }}" alt="A screenshot of our team">
+      </div>
+    </div>
+    <div class="about-us-container">
+      <div class="about-us-section">
+        <h2>Our Team</h2>
+        <p>Our team is composed of passionate entertainment enthusiasts who are dedicated to bringing you the best streaming experience possible. From our engineers and designers to our content curators and customer support staff, every member of our team plays a crucial role in helping us achieve our mission.</p>
+      </div>
+      <br>
+      <div class="about-us-section">
+        <br>
+        <h2>Our Products</h2>
+        <p>Our video streaming platform offers a wide variety of movies, TV shows, and other video content for users to enjoy. We have a diverse selection of content in multiple languages and genres, and we are constantly adding new titles to our library. In addition to our streaming service, we also offer premium features such as ad-free viewing and offline downloads.</p>
+      </div>
+    </div>
+{%endblock%}

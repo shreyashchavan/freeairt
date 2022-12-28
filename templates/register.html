@@ -1,0 +1,28 @@
+<!-- register.html -->
+{% extends "header.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h2>Register</h2>
+    <form method="post" action="{{ url_for('register') }}">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class="form-control") }}
+      </div>
+      <div class="form-group">
+        {{ form.confirm_password.label }}
+        {{ form.confirm_password(class="form-control") }}
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+      <h6> Alreay have account?</h6> <a href="{{ url_for('login') }}">Sign-In</a>
+    </form>
+  </div>
+{% endblock %}
