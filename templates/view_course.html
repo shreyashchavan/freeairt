@@ -9,6 +9,7 @@
     <hr>
     <br>
     {% for link in links %}
+    <p> Class no. {{ loop.index }}:</p>
     <div class="iframe-container">
       <iframe src="{{ link[3] }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
