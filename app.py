@@ -1,12 +1,9 @@
 # app.py
 from flask import Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 from forms import UpdateCourseForm, UpdateVideoForm, AddCourseForm, LoginForm, RegisterForm
 import os
-from flask_mail import Mail, Message
 import sqlite3
 
 app = Flask(__name__)
@@ -140,6 +137,7 @@ def add_course():
     return render_template('add_course.html', form=form)
 
 @app.route('/courses/<name>')
+@login_required
 def view_course(name):
     # Connect to the database
     search = name
@@ -207,7 +205,7 @@ def update_course(course_id):
         return redirect(url_for('courses'))
     return render_template('update_course.html', course=form)'''
 
-@app.route('/delete_course/<int:course_id>', methods=['POST'])
+@app.route('/delete_course/<course_id>', methods=['POST'])
 @login_required
 def delete_course(course_id):
     conn = sqlite3.connect('mydatabase.db')
@@ -216,7 +214,32 @@ def delete_course(course_id):
     conn.commit()
     c.close()
     conn.close()
+    print("Deleted")
     return redirect(url_for('courses'))
+
+@app.route('/reset', methods=["GET","POST"])
+@login_required
+def reset():
+    if request.method == 'POST':
+        new_pass = request.form['new_pass']
+        email = request.form['email']
+        username = current_user.username
+        conn = sqlite3.connect('mydatabase.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM users WHERE username = ? AND email = ?', (username, email))
+        user = c.fetchone()
+
+        if user is None:
+            return render_template('reset.html', msg="please input correct email")
+
+        c.execute("UPDATE users SET password=? WHERE username=? AND email=?", (new_pass,username,email))
+        conn.commit()
+        c.close()
+        conn.close()
+        msg="sucess"
+        return render_template('reset.html', msg=msg)
+    else:
+        return render_template('reset.html')
 
 @app.route('/add_video/<int:course_id>', methods=['GET', 'POST'])
 @login_required
@@ -265,5 +288,3 @@ def delete_video(video_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
