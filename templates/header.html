@@ -10,6 +10,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <meta name="description" content="this site provide access to free courses">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <title>FREEAirT</title>
 </head>
 <body>
@@ -34,13 +35,18 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
       </li>
+      {% if current_user.is_authenticated == 0 %}
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('login') }}">Login</a>
       </li>
-      {% if current_user %}
+      {% endif %}
+      {% if current_user.is_authenticated %}
       <div>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
           </li>
         </ul>
       </div>
