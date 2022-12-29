@@ -66,5 +66,5 @@ Start the server
 - [ ] prevelidges for user roles
 - [ ] faster streamings
 - [ ] write unit tests
-- [ ] Implement user authentication
+- [x] Implement user authentication
 - [ ] Make it public distributions so tutors can use it to build thier own system
